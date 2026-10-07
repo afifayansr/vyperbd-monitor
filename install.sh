@@ -7,7 +7,7 @@ echo "=============================================="
 
 if [[ $EUID -ne 0 ]]; then
   echo "Run as root:"
-  echo "  curl -fsSL https://raw.githubusercontent.com/YOUR_GITHUB_USER/YOUR_REPO/main/install.sh | sudo bash"
+  echo "  curl -fsSL https://raw.githubusercontent.com/afifayansr/vyperbd-monitor/main/install.sh | sudo bash"
   exit 1
 fi
 
@@ -32,7 +32,7 @@ apt-get update -y
 apt-get install -y curl openssl iproute2 iputils-ping procps util-linux coreutils ca-certificates
 
 install -d -m 0755 /opt/vyperbd-monitor
-curl -fsSL "https://raw.githubusercontent.com/YOUR_GITHUB_USER/YOUR_REPO/main/agent/agent.sh" -o /opt/vyperbd-monitor/agent.sh
+curl -fsSL "https://raw.githubusercontent.com/afifayansr/vyperbd-monitor/main/agent/agent.sh" -o /opt/vyperbd-monitor/agent.sh
 chmod 0755 /opt/vyperbd-monitor/agent.sh
 
 cat > /etc/vyperbd-monitor.conf <<EOF
